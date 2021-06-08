@@ -35,7 +35,6 @@ const MovieList = (props)=> {
 }
 
 const mapStateToProps = (state) => {
-    console.log("MovieList.js state: ", state)
     return {
         appTitle: state.appTitle,
         movies: state.movies

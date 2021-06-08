@@ -23,6 +23,9 @@ const AddMovieForm = (props) => {
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault();
+        props.addMovie(movie);
+        push('/movies/');
     }
 
     const { title, director, genre, metascore, description } = movie;
@@ -66,5 +69,10 @@ const AddMovieForm = (props) => {
         </div>
     </div>);
 }
-
-export default AddMovieForm;
+// Is this supposed to be here? Why? No props used. But connect is imported.
+const mapStateToProps = (state) => {
+    return {
+        movies: state.movies
+    }
+}
+export default connect(mapStateToProps, {addMovie})(AddMovieForm);
