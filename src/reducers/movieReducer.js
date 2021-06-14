@@ -14,12 +14,6 @@ const reducer = (state=initialState, action) => {
                 ...state,
                 movies: state.movies.filter(item=>(action.payload !== item.id))
             }
-        case ADD_MOVIE:
-            // const newMovie = {
-            //     ...action.payload,
-            //     id: Date.now()
-            // }
-            console.log("In reducer, case ADD_MOVIE: ", action.payload, state);
             return {
                 ...state,
                 movies: [...state.movies, action.payload]
