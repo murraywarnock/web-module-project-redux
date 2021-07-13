@@ -1,11 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { connect } from 'react-redux';
 
 import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
 
+
 const MovieList = (props)=> {
+<<<<<<< HEAD
+=======
+    // const movies = [];
+>>>>>>> 06573486bd1cf7323e261bbcba52752c393c52f8
     const movies = props.movies;
 
     return (
@@ -34,9 +40,16 @@ const MovieList = (props)=> {
 }
 
 const mapStateToProps = (state) => {
+<<<<<<< HEAD
     return({
         movies: state.movieReducer.movies
     })
+=======
+    return {
+        appTitle: state.appTitle,
+        movies: state.movies
+    }
+>>>>>>> 06573486bd1cf7323e261bbcba52752c393c52f8
 }
 
 export default connect(mapStateToProps)(MovieList);
