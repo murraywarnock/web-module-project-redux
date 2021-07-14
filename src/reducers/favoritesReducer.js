@@ -8,19 +8,19 @@ export const initialState = {
 export const favoritesReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_FAVORITES:
-       console.log("TOGGLE_FAVORITES state.displayFavorites", state.displayFavorites);
+       console.log("TOGGLE_FAVORITES state", state);
        return {
         ...state,
-        diplayFavorites: state.displayFavorites ? false : true
+        // either of below 2 lines should work, but neither do
+        diplayFavorites: !state.displayFavorites
+        // diplayFavorites: state.displayFavorites ? false : true
       };
     case ADD_FAVORITE:
-        console.log("ADD_FAVORITE action.payload: ", action.payload);
       return {
         ...state,
         favorites: [...state.favorites, action.payload]       
       };
       case REMOVE_FAVORITE:
-        console.log("REMOVE_FAVORITE action.payload: ", action.payload);
       return {
         ...state,
         favorites: state.favorites.filter(item=>(action.payload !== item.id))

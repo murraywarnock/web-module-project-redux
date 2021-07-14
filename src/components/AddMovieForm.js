@@ -6,7 +6,6 @@ import { Link, useHistory } from 'react-router-dom';
 
 const AddMovieForm = (props) => {
     const { push } = useHistory();
-    console.log("AddMovieForm props: ", props);
     const [movie, setMovie] = useState({
         id: props.movies.length + 1,
         title: "",

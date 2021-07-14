@@ -11,6 +11,5 @@ export const addFavorite = newFavorite => {
 };
 
 export const removeFavorite = id => {
-    console.log("favoritesActions removeFavorite id: ", id);
     return { type: REMOVE_FAVORITE, payload: id };
 };

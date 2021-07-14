@@ -10,7 +10,6 @@ const Movie = (props) => {
     const { push } = useHistory();
 
     const { movies } = props;
-    console.log("id in new movie. Movie.js: ", id);
     const movie = movies.find(movie=>movie.id===Number(id));
     
     return(<div className="modal-page col">
