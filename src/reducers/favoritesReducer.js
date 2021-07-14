@@ -11,9 +11,7 @@ export const favoritesReducer = (state = initialState, action) => {
        console.log("TOGGLE_FAVORITES state", state);
        return {
         ...state,
-        // either of below 2 lines should work, but neither do
-        diplayFavorites: !state.displayFavorites
-        // diplayFavorites: state.displayFavorites ? false : true
+        displayFavorites: !state.displayFavorites
       };
     case ADD_FAVORITE:
       return {
