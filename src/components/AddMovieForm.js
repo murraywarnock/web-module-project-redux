@@ -6,8 +6,9 @@ import { Link, useHistory } from 'react-router-dom';
 
 const AddMovieForm = (props) => {
     const { push } = useHistory();
-
+    console.log("AddMovieForm props: ", props);
     const [movie, setMovie] = useState({
+        id: props.movies.length + 1,
         title: "",
         director: "",
         genre: "",
@@ -71,9 +72,8 @@ const AddMovieForm = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
-      movies: state.movies
+      movies: state.movieReducer.movies
     };
   };
   
